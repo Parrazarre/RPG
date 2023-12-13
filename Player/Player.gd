@@ -28,7 +28,7 @@ func _ready():
 	animationState = animationTree.get("parameters/playback") # state machine initialisation
 
 # on each frame -> these get called
-func _physics_process(delta):
+func _process(delta):
 	# movement function
 	match state:
 		MOVE:
@@ -66,6 +66,7 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("cs_attack"):
 		state = ATTACK
+		#$Idle01.scale = Vector2(1.1, 0.9) #squashes the player when they attack 
 
 # attack functino
 func attack_state(delta):
@@ -76,6 +77,7 @@ func attack_state(delta):
 	
 func attack_animation_finished():
 	state = MOVE
+	#$Idle01.scale = Vector2(1, 1) #resets the scale
 
 
 
