@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r4uqf4okndl0"
-path="res://.godot/imported/Idle_01.png-fcabead6ff98e12920e8497b62fa0f4b.ctex"
+uid="uid://caevvw15d5fbd"
+path="res://.godot/imported/dialog_box.png-9bebcb981f613967e74ae9b89392d8d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Template/Idle_01.png"
-dest_files=["res://.godot/imported/Idle_01.png-fcabead6ff98e12920e8497b62fa0f4b.ctex"]
+source_file="res://assets/Sprites/UI/dialog_box.png"
+dest_files=["res://.godot/imported/dialog_box.png-9bebcb981f613967e74ae9b89392d8d9.ctex"]
 
 [params]
 

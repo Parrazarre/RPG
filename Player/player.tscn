@@ -1,8 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://pvha305gqros"]
+[gd_scene load_steps=41 format=3 uid="uid://pvha305gqros"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_cwf6d"]
-[ext_resource type="Texture2D" uid="uid://bt1aow04yujgn" path="res://Player/Player.png" id="2_aoxje"]
-[ext_resource type="PackedScene" uid="uid://dffahxs3ac7lf" path="res://Boxes/hitbox.tscn" id="3_ss3sw"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_yo4d4"]
+[ext_resource type="Texture2D" uid="uid://bt1aow04yujgn" path="res://Player/Player.png" id="2_25iob"]
+[ext_resource type="PackedScene" uid="uid://dffahxs3ac7lf" path="res://Boxes/hitbox.tscn" id="3_6ww64"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a855n"]
 radius = 4.0
@@ -572,13 +572,16 @@ graph_offset = Vector2(28, -17)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rakj3"]
 height = 28.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm8of"]
+size = Vector2(26, 32)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_cwf6d")
+script = ExtResource("1_yo4d4")
 
 [node name="Idle01" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
-texture = ExtResource("2_aoxje")
+texture = ExtResource("2_25iob")
 hframes = 60
 frame = 1
 
@@ -604,7 +607,7 @@ parameters/Run/blend_position = Vector2(0, 0)
 position = Vector2(0, -4)
 rotation = 1.5708
 
-[node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource("3_ss3sw")]
+[node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource("3_6ww64")]
 position = Vector2(15, 0)
 collision_layer = 16
 collision_mask = 8
@@ -613,5 +616,14 @@ collision_mask = 8
 visible = false
 shape = SubResource("CapsuleShape2D_rakj3")
 disabled = true
+
+[node name="DialogInteractionArea" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteractionArea"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_xm8of")
+debug_color = Color(0.207843, 0.623529, 0.427451, 0.254902)
 
 [editable path="HitboxPivot/SwordHitbox"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c803acw737fh8"
-path="res://.godot/imported/Idle_01.png-d94588610593f0ab9616b2e5142941e9.ctex"
+uid="uid://cfs5l7tvegfyq"
+path="res://.godot/imported/Idle_01.png-135b677760de02f4182e2c7f70665360.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Mahovina/Idle_01.png"
-dest_files=["res://.godot/imported/Idle_01.png-d94588610593f0ab9616b2e5142941e9.ctex"]
+source_file="res://assets/Sprites/Characters/Template/Idle_01.png"
+dest_files=["res://.godot/imported/Idle_01.png-135b677760de02f4182e2c7f70665360.ctex"]
 
 [params]
 

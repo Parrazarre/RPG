@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7lnsj4x5ep6m"]
+[gd_scene load_steps=15 format=3 uid="uid://7lnsj4x5ep6m"]
 
 [ext_resource type="PackedScene" uid="uid://pvha305gqros" path="res://Player/player.tscn" id="2_54q4a"]
 [ext_resource type="PackedScene" uid="uid://qy8vevutmwdv" path="res://World/bush.tscn" id="2_btxuo"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://1acqgjc235g1" path="res://World/CliffTileset.png" id="3_nmqd8"]
 [ext_resource type="Texture2D" uid="uid://cveuyqw08tt51" path="res://World/GrassBackground.png" id="3_vegak"]
 [ext_resource type="PackedScene" uid="uid://dfxxnm1rlj0a1" path="res://World/grass.tscn" id="6_c8qle"]
+[ext_resource type="PackedScene" uid="uid://q6c1roulhyc0" path="res://src/world/dialog_area.tscn" id="7_x54n6"]
+[ext_resource type="Texture2D" uid="uid://c803acw737fh8" path="res://assets/Sprites/Characters/Mahovina/Idle_01.png" id="8_1tdrn"]
+[ext_resource type="PackedScene" uid="uid://coihm8qsjwxwu" path="res://src/ui/dialog_player.tscn" id="9_gh540"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgfp8"]
 texture = ExtResource("2_qkm24")
@@ -868,6 +871,9 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.623529, 0.223529, 0.32549, 1)
 sources/0 = SubResource("TileSetAtlasSource_utpub")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvw66"]
+size = Vector2(48, 28)
+
 [node name="World" type="Node2D"]
 
 [node name="BG" type="Sprite2D" parent="."]
@@ -891,6 +897,19 @@ layer_0/tile_data = PackedInt32Array(-196608, 0, 2, -196607, 65536, 2, -196606, 
 
 [node name="Ysort" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="DialogAreaMahovina" parent="Ysort" instance=ExtResource("7_x54n6")]
+position = Vector2(238, 73)
+dialog_key = "Mahovina"
+
+[node name="CollisionShape2D" parent="Ysort/DialogAreaMahovina" index="0"]
+shape = SubResource("RectangleShape2D_rvw66")
+debug_color = Color(0.941176, 0, 0.615686, 0.215686)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ysort/DialogAreaMahovina"]
+position = Vector2(0, -9)
+texture = ExtResource("8_1tdrn")
+flip_h = true
 
 [node name="Player" parent="Ysort" instance=ExtResource("2_54q4a")]
 position = Vector2(31, 56)
@@ -1071,3 +1090,7 @@ position = Vector2(112, 160)
 
 [node name="Grass6" parent="Ysort/Grass" instance=ExtResource("6_c8qle")]
 position = Vector2(272, 32)
+
+[node name="DialogPlayer" parent="." instance=ExtResource("9_gh540")]
+
+[editable path="Ysort/DialogAreaMahovina"]

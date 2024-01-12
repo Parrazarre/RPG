@@ -5,4 +5,4 @@ func _ready():
 	animatedSprite.play("Animate")
 
 func _on_animated_sprite_2d_animation_finished():
-	queue_free()
+	queue_free() #Deletes the grass object's instance

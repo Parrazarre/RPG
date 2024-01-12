@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://coihm8qsjwxwu"]
+
+[ext_resource type="Script" path="res://src/ui/dialog_player.gd" id="1_34bce"]
+[ext_resource type="Texture2D" uid="uid://c03u67b1bo7ty" path="res://assets/Sprites/UI/dialog_box_2.png" id="2_6apne"]
+[ext_resource type="FontFile" uid="uid://drpu84lur1h1i" path="res://assets/Dialog/Fonts/pixelsix10.ttf" id="2_xwbje"]
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_34bce")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_top = 112.0
+offset_right = 320.0
+offset_bottom = 176.0
+texture = ExtResource("2_6apne")
+stretch_mode = 5
+
+[node name="TextLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 36.0
+offset_top = 116.0
+offset_right = 284.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_xwbje")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 3
+autowrap_mode = 2
